@@ -7,15 +7,45 @@
     <title> Ejercicio 1 </title>
 </head>
 <body>
+    <!-- 
+        1- crear un archivo que tenga extensión ".html" y dentro de ese archivo colocar un botón, 
+        que al presionarlo realice una operación matemática y lo muestre en pantalla. 
+        NOTA: Permití que sea el usuario el que ingrese los dos números.
+    -->
     <form action="">
         <label for="ingreso1">Ingrese un Numero: </label>
-        <input id="ingreso1" type="int" name="numero1">
+        <input id="ingreso1" type="text" name="numero1" value="0">
         <br>
         <label for="ingreso2">Ingrese otro Numero: </label>
-        <input id="ingreso2" type="int" name="numero2">
+        <input id="ingreso2" type="text" name="numero2" value="0">
     </form>
-    <button type="button">
+    <button type="button" onclick="calcular(document.getElementById('ingreso1').value,document.getElementById('ingreso2').value)">
         CALCULAR
+    </button>   
+    <br>
+    <br>
+    <br>
+    <!--
+        2- crear un archivo que tenga extensión ".html" y dentro de ese archivo colocar un input de tipo texto y un input de tipo botón. 
+        Abrir el navegador y escribir algo en el input de tipo texto, al presionar el botón debe capturar el valor del input de tipo texto 
+        y mostrar el resultado. 
+    -->
+    <form action="">
+        <label for="textoIngresado">Escriba un Texto: </label>
+        <input id="textoIngresado" type="text">
+    </form>
+    <button type="button" onclick="mostrarTexto(document.getElementById('textoIngresado').value)">
+        ¡Imprimir en Pantalla!
     </button>
 </body>
 </html>
+
+<script type="text/javascript">
+    function calcular(valor1,valor2){
+        alert("Resultado: "+(parseInt(valor1)+parseInt(valor2)))
+    }
+
+    function mostrarTexto(unTexto){
+        alert("El texto ingresado es: "+unTexto)
+    }
+</script>
