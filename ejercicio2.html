@@ -14,10 +14,10 @@
         y el resultado lo coloque dentro de un input de tipo textarea.
     -->
     <form action="">
-        <input id="inputText" type="textarea">
         <button type="button" onclick="request()">
             Clickear!
         </button>
+        <textarea id="textMostrar" rows="3" cols="50"></textarea>
     </form>
 </body>
 </html>
@@ -25,7 +25,7 @@
     function request(){
         fetch('https://jsonplaceholder.typicode.com/todos/2')
         .then(response => response.json())
-        .then(json => document.getElementById('inputText').value = json)
+        .then(json => document.getElementById('textMostrar').value = JSON.stringify(json))
     }
 </script>
 
